@@ -1,0 +1,14 @@
+<div class="container">
+    <h2>Order Details</h2>
+    <p><strong>Order ID:</strong> {{ order?.OrderId }}</p>
+    <p><strong>Customer Name:</strong> {{ order?.UserId }}</p>
+    <p><strong>Payment Method:</strong> {{ order?.PaymentType }}</p>
+  
+    <h3>Products:</h3>
+    <ul>
+      <li *ngFor="let item of order?.Products">
+        {{ item.ProductId }} (Quantity: {{ item.Quantity }})
+      </li>
+    </ul>
+  </div>
+  

@@ -1,0 +1,21 @@
+<div class="container">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Order Date</th>
+          <th>Total Price</th>
+          <th>Payment Method</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders" (click)="gotoOrderDetails(order.OrderId)">
+          <td>{{ order.OrderId }}</td>
+          <td>{{ order.OrderDate  }}</td>
+          <td>{{ calculateTotal(order) | currency }}</td>
+          <td>{{ order.PaymentType }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

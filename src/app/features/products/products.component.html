@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    @for (product of products; track $index) {
+    <div class="col-md-4 mb-3">
+      <div
+        class="card product-card"
+        [ngClass]="{ 'low-stock': product.AvailablePieces < 5 }"
+      >
+        <img [src]="product.ProductImg" class="card-img-top" />
+        <div class="card-body">
+          <h5 class="card-title">{{ product.ProductName }}</h5>
+          <p class="product-price">
+            Price: {{ product.ProductPrice | currency }}
+          </p>
+          <p class="product-stock">Available: {{ product.AvailablePieces }}</p>
+          <button
+            class="btn btn-primary edit-btn me-2"
+            (click)="editQuantity(product)"
+          >
+            Edit
+          </button>
+          <button class="btn btn-outline-success edit-btn" (click)="addOrder(product)">Add Order</button>
+
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+</div>
